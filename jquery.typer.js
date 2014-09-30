@@ -12,7 +12,8 @@
             delay: 2000,
             markDelay: 300,
             markDuration: 200,
-            duration: 600,
+            durationMin: 40,
+            durationMax: 80,
             endless: true,
             onType: $.noop,
             onMark: $.noop,
@@ -41,7 +42,7 @@
                     if( isTag ){
                         typetext(i);
                     } else {
-                        timer = setTimeout(typetext, options.duration/10, i);
+                        timer = setTimeout(typetext, Math.floor(Math.random() * (options.durationMax - options.durationMin)) + options.durationMin, i);
                     }
                     options.onType(timer);
                 } else {
