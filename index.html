@@ -33,22 +33,21 @@
                 text-align: center;
             }
 
-            span { color:#0ae }
+            span.highlighted { background-color: #0ae; }
         </style>
 
         <title>jquery.typer.js | The typewriter effect</title>
     </head>
 
     <body>
-        <div id="typer">foo</div>
-
+        <div id="typer"></div>
         <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
         <script src='jquery.typer.js'></script>
         <script>
             var win = $(window),
                 foo = $('#typer');
 
-            foo.typer(['<i>Anyone</i> <u>is</u> <b>awesome</b>!', 'Foo is <span>not</span> equal to bar.', 1337]);
+            foo.typer(['Anyone is awesome!', 'Foo is not equal to bar.', 1337]);
 
             // unneeded...
             win.resize(function(){
